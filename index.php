@@ -30,7 +30,7 @@ $partsPunition = explode('/', $image);
             console.log('BRAVO !');
         }
         e.target.src = '<?php echo $partsPunition[6].'/'.$partsPunition[7] ?>';
-        e.target.onclick = function() {
+        e.onclick = function() {
             window.location.reload();
         }
     }
