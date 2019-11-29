@@ -160,3 +160,8 @@ jean-paul+mochet
 regis+schultz
 stanislas+nordey
 xavier+niel
+alain+gerard+wertheimer
+emmanuel+besnier
+pierre+castel
+patric+drahi
+alexandre+ricard
