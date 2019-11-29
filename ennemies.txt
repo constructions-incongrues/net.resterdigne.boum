@@ -28,3 +28,4 @@ laurent+wauquiez
 christian+clavier
 stephane+bern
 jamel+debouze
+pierre+gattaz
