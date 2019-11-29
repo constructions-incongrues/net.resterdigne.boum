@@ -1,0 +1,13 @@
+{
+    "name": "tristan/net.resterdigne.gehenne",
+    "authors": [
+        {
+            "name": "Tristan Rivoallan",
+            "email": "tristan.rivoallan-prestataire@laposte.fr"
+        }
+    ],
+    "require": {
+        "filippo-toso/qwant-unofficial-api": "^1.0",
+        "symfony/finder": "^5.0"
+    }
+}
