@@ -23,6 +23,10 @@
 - [] double karma
 - [] Game engine
 - [] <http://www.bdenvrac.com/doc/tinsultes.html>
+- [] oppressors : directeurs de journaux, blogs crypto ?
+- [] MVP
+- [] Annonce
+- [] Glitch, brouillage vidéo de transition, ralenti, etc
 
 ## Scoring
 
@@ -34,11 +38,15 @@
     - oppressé rétribué : baisse
     - oppressé ignore : hausse
 
+Jauge basée sur la santé de la main invisible du marché. Elle se remplit ou se vide selon la classe qu'on choisit. Elle fait des pouces haut, doigts d'honneur, etc.
+
 ## Narration
 
 Karma = échelle de quelque chose
 À la recherche de la main invisible secrète de Karl Marx. Fragments répartis...
 Reprendre l'histoire des doigts de bouddha et du singe roi
+
+Une main invisible ruisselante de haine et de mépris
 
 ## Wording
 

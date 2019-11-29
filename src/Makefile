@@ -1,21 +1,19 @@
 SHELL=/usr/bin/env bash
 .PHONY: ennemies victims deploy images
 
-images: oppressed oppressors retribution
-
 clean:
 	rm -rf public/assets/images/*
 
+images: oppressed oppressors retribution
+
+install:
+	composer install
+
 oppressors:
-	googleimagesdownload -s large -l 10 -kf ./var/oppressors.txt -o public/assets/images/oppressors; \
+	if [ ! -d public/assets/images/oppressors ]; then googleimagesdownload -s large -l 10 -kf ./var/oppressors.txt -o public/assets/images/oppressors; fi
 
 oppressed:
-	googleimagesdownload -s large -l 20 -kf ./var/oppressed.txt -o public/assets/images/oppressed; \
+	if [ ! -d public/assets/images/oppressed ]; then googleimagesdownload -s large -l 20 -kf ./var/oppressed.txt -o public/assets/images/oppressed; fi
 
 retribution:
-	googleimagesdownload -l 20 -t animated -kf ./var/retribution.txt -o public/assets/images/retribution; \
-
-deploy:
-	git add .
-	git commit -m "Deploy"
-	git push
+	if [ ! -d public/assets/images/retribution ]; then googleimagesdownload -l 20 -t animated -kf ./var/retribution.txt -o public/assets/images/retribution; fi

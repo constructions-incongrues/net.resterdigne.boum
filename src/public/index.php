@@ -17,6 +17,8 @@ $finderRetributions->files()->in(__DIR__.'/assets/images/retribution');
 $partsImageRetributions = array_slice(explode('/', array_rand(iterator_to_array($finderRetributions))), -3, 3);
 ?>
 
+<title>Ma main invisible, tu la veux sur la gueule ?</title>
+
 <img id="image" src="assets/images/<?php echo rawurldecode(implode('/', $partsImageActors)) ?>" style="width:100%; height:100%">
 
 <script>
