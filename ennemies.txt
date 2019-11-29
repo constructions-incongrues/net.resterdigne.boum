@@ -181,3 +181,5 @@ president+banque+francaise
 stephane+richard
 guillaume+fori
 georges+plassat
+aymeric+caron
+yann+moix
