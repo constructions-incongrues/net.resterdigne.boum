@@ -1,0 +1,11 @@
+<img id="victim" src="" style="width:100%; height:100%">
+
+<script>
+    document.getElementById('victim').src = 'victims/'+Math.floor(Math.random() * Math.floor(5))+'.jpg';
+    document.getElementById('victim').onclick = function(e) {
+        e.target.src = 'explosion.gif';
+        e.target.onclick = function() {
+            window.location.reload();
+        }
+    }
+</script>
