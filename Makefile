@@ -1,5 +1,5 @@
 SHELL=/bin/bash
-.PHONY: ennemies victims
+.PHONY: ennemies victims deploy
 
 ennemies:
 	for ennemi in `cat ./ennemies.txt`; do \
@@ -11,7 +11,7 @@ ennemies:
 victims:
 	for victim in `cat ./victims.txt`; do \
 		if [ ! -d "./downloads/$$victim" ]; then \
-			/home/tristan/.local/bin/googleimagesdownload -l 20 -k "$$victim" -i victims; \
+			/home/tristan/.local/bin/googleimagesdownload -l 60 -k "$$victim" -i victims; \
 		fi \
 	done
 

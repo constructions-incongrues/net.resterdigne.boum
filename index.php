@@ -14,6 +14,11 @@ $parts = explode('/', $image);
         window.location.reload();
     }, 3000);
     document.getElementById('victim').onclick = function(e) {
+        if (e.target.src.match(/victim/)) {
+            console.log('ASSASSIN !');
+        } else {
+            console.log('BRAVO !');
+        }
         e.target.src = 'explosion.gif';
         e.target.onclick = function() {
             window.location.reload();
