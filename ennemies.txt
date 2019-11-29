@@ -158,3 +158,4 @@ thomas+hugues
 jean-charles+naouri
 jean-paul+mochet
 regis+schultz
+stanislas+nordey

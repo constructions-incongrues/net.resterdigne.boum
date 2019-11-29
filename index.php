@@ -17,7 +17,7 @@ $partsPunition = explode('/', $image);
 
 ?>
 
-<img src="<?php echo $parts[6].'/'.$parts[7].'/'.$parts[8] ?>" style="width:100%; height:100%">
+<img src="<?php echo $partsImage[6].'/'.$partsImage[7].'/'.$partsImage[8] ?>" style="width:100%; height:100%">
 
 <script>
     window.setInterval(() => {
@@ -29,7 +29,7 @@ $partsPunition = explode('/', $image);
         } else {
             console.log('BRAVO !');
         }
-        e.target.src = '<?php echo $parts[6].'/'.$parts[7].'/'.$parts[8] ?>';
+        e.target.src = '<?php echo $partsPunition[6].'/'.$partsPunition[7].'/'.$partsPunition[8] ?>';
         e.target.onclick = function() {
             window.location.reload();
         }
