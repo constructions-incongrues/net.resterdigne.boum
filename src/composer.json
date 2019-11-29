@@ -1,0 +1,12 @@
+{
+    "name": "constructionsincongrues/lagrandepurge",
+    "authors": [
+        {
+            "name": "Constructions Incongrues",
+            "email": "contact@constructions-incongrues.net"
+        }
+    ],
+    "require": {
+        "symfony/finder": "^5.0"
+    }
+}
