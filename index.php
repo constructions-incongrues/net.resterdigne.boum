@@ -10,7 +10,7 @@ $image = array_rand($iterator);
 $partsImage = explode('/', $image);
 
 $finder = new Finder();
-$finder->files()->in(__DIR__.'/downloads');
+$finder->files()->in(__DIR__.'/punition');
 $iterator = iterator_to_array($finder);
 $image = array_rand($iterator);
 $partsPunition = explode('/', $image);
