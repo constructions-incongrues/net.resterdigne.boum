@@ -29,7 +29,7 @@ $partsPunition = explode('/', $image);
         } else {
             console.log('BRAVO !');
         }
-        e.target.src = '<?php echo $partsPunition[6].'/'.$partsPunition[7].'/'.$partsPunition[8] ?>';
+        e.target.src = '<?php echo $partsPunition   [6].'/'.$partsPunition[7].'/'.$partsPunition[8] ?>';
         e.target.onclick = function() {
             window.location.reload();
         }
