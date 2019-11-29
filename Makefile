@@ -1,21 +1,21 @@
-SHELL=/bin/bash
-.PHONY: ennemies victims deploy
+attach:
+	docker-compose run --rm php /bin/sh
 
-ennemies:
-	for ennemi in `cat ./ennemies.txt`; do \
-		if [ ! -d "./downloads/$$ennemi" ]; then \
-			/home/tristan/.local/bin/googleimagesdownload -l 20 -k "$$ennemi" -i ennemies; \
-		fi \
-	done
+build:
+	docker-compose build
 
-victims:
-	for victim in `cat ./victims.txt`; do \
-		if [ ! -d "./downloads/$$victim" ]; then \
-			/home/tristan/.local/bin/googleimagesdownload -l 60 -k "$$victim" -i victims; \
-		fi \
-	done
+clean: stop
+	docker-compose rm -f
 
-deploy:
-	git add .
-	git commit -m "Deploy"
-	git push
+logs:
+	docker-compose logs -f
+
+start:
+	docker-compose up -d
+
+stop:
+	docker-compose stop
+
+urls:
+	@echo "[application] http://boum.localhost"
+	@echo "[traefik    ] http://traefik.boum.localhost"
