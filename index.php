@@ -17,13 +17,13 @@ $partsPunition = explode('/', $image);
 
 ?>
 
-<img src="<?php echo $partsImage[6].'/'.$partsImage[7].'/'.$partsImage[8] ?>" style="width:100%; height:100%">
+<img id="image" src="<?php echo $partsImage[6].'/'.$partsImage[7].'/'.$partsImage[8] ?>" style="width:100%; height:100%">
 
 <script>
     window.setInterval(() => {
         window.location.reload();
     }, 1500);
-    document.getElementById('victim').onclick = function(e) {
+    document.getElementById('image').onclick = function(e) {
         if (e.target.src.match(/victim/)) {
             console.log('ASSASSIN !');
         } else {
