@@ -1,11 +1,11 @@
-"marine+le+pen"
-"castaner"
-"finkelkraut"
-"eric+zemmour"
-"bernard+henri+levy"
-"laurent+ruquier"
-"hanouna"
-"robert menard"
-"quatremer"
-"laurent barbier"
-"jean pierre elkabash"
+marine+le+pen
+castaner
+finkelkraut
+eric+zemmour
+bernard+henri+levy
+laurent+ruquier
+hanouna
+robert+menard
+quatremer
+laurent+barbier
+jean+pierre+elkabash
