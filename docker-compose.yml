@@ -9,6 +9,11 @@ services:
       - "traefik.http.routers.api.rule=Host(`api.lagrandepurge.localhost`)"
       - "traefik.http.routers.api.entrypoints=web"
       - "traefik.http.services.api.loadbalancer.server.port=8080"
+      - "traefik.http.middlewares.cors.headers.accesscontrolallowmethods=GET,OPTIONS,PUT"
+      - "traefik.http.middlewares.cors.headers.accesscontrolalloworigin=*"
+      - "traefik.http.middlewares.cors.headers.accesscontrolmaxage=100"
+      - "traefik.http.middlewares.cors.headers.addvaryheader=true"
+      - "traefik.http.routers.api.middlewares=cors@docker"
     volumes:
       - ./src/api/src:/usr/local/src
       - ./var/images:/usr/local/src/public/images
@@ -40,6 +45,7 @@ services:
       - "traefik.http.routers.dev.entrypoints=web"
     volumes:
       - ./src/game/src:/home/node/src
+      - ./var/images:/home/node/src/app/static/assets/collections
 
   traefik:
     command:

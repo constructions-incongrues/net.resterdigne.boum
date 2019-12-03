@@ -23,6 +23,12 @@ export default class Purge extends Phaser.Scene {
    *  @protected
    */
   preload() {
+    var scene = this;
+    $.get('http://api.lagrandepurge.localhost/collection/oppressors', function(urls) {
+        urls.forEach(function (url, i) {
+          scene.load.image(i.toString(), 'collections/oppressors/' + url.substring(url.lastIndexOf('/')+1));
+        });
+    });
   }
 
   /**
@@ -32,6 +38,7 @@ export default class Purge extends Phaser.Scene {
    *  @param {object} [data={}] - Initialization parameters.
    */
   create(/* data */) {
+    this.add.image(400, 300, '2');
   }
 
   /**
