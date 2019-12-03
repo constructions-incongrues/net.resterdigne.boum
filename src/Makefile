@@ -6,6 +6,10 @@ clean:
 
 images: oppressed oppressors retribution
 
+images-cleanup:
+	find public/assets/images -name '*%*'
+	find public/assets/images -name '*%*' -delete
+
 install:
 	composer install
 
