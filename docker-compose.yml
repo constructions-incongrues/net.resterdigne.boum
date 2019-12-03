@@ -32,6 +32,15 @@ services:
       - ./var:/usr/local/src/var
       - ./var/images:/usr/local/src/public/images
 
+  game:
+    build: ./src/game
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.dev.rule=Host(`game.lagrandepurge.localhost`)"
+      - "traefik.http.routers.dev.entrypoints=web"
+    volumes:
+      - ./src/game/src:/home/node/src
+
   traefik:
     command:
       - "--api.insecure=true"

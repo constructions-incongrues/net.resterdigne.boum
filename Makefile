@@ -1,8 +1,11 @@
 attach-front:
-	docker-compose run --rm front /bin/sh
+	docker-compose run --rm --label traefik.enable=false front /bin/sh
 
 attach-api:
-	docker-compose run --rm api /bin/sh
+	docker-compose run --rm --label traefik.enable=false api /bin/sh
+
+attach-game:
+	docker-compose run --rm --label traefik.enable=false --entrypoint /bin/sh game
 
 build:
 	docker-compose build
