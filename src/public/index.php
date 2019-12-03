@@ -17,9 +17,12 @@ $finderRetributions->files()->in(__DIR__.'/assets/images/retribution');
 $partsImageRetributions = array_slice(explode('/', array_rand(iterator_to_array($finderRetributions))), -3, 3);
 ?>
 
-<title>Ma main invisible, tu la veux sur la gueule ? | v0.1.0</title>
+<title>Ma main invisible, tu la veux sur la gueule ? | v0.2.0</title>
 
-<img id="image" src="assets/images/<?php echo rawurldecode(implode('/', $partsImageActors)) ?>" style="width:100%; height:100%">
+<body style="background-color:#000;overflow:hidden;">
+<div style="text-align:center;">
+    <img id="image" src="assets/images/<?php echo rawurldecode(implode('/', $partsImageActors)) ?>" style="height:100%;">
+</div>
 
 <script>
     var isPaused = false;
@@ -31,12 +34,13 @@ $partsImageRetributions = array_slice(explode('/', array_rand(iterator_to_array(
 
     ['click','ontouchstart'].forEach(function(event) {
         document.getElementById('image').addEventListener(event, function(e) {
-            if (e.target.src.match(/victim/)) {
+            if (e.target.src.match(/oppressed/)) {
                 console.log('ASSASSIN !');
             } else {
                 console.log('BRAVO !');
+                e.target.src = 'assets/images/<?php echo rawurldecode(implode('/', array_slice(explode('/', array_rand(iterator_to_array($finderRetributions))), -3, 3))) ?>';
             }
-            e.target.src = 'assets/images/<?php echo rawurldecode(implode('/', array_slice(explode('/', array_rand(iterator_to_array($finderRetributions))), -3, 3))) ?>';
         });
     });
 </script>
+</body>

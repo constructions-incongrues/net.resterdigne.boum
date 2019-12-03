@@ -10,10 +10,10 @@ install:
 	composer install
 
 oppressors:
-	if [ ! -d public/assets/images/oppressors ]; then googleimagesdownload -s large -l 10 -kf ./var/oppressors.txt -o public/assets/images/oppressors; fi
+	if [ ! -d public/assets/images/oppressors ]; then googleimagesdownload -s large -l 10 -a wide -kf ./var/oppressors.txt -o public/assets/images/oppressors; fi
 
 oppressed:
-	if [ ! -d public/assets/images/oppressed ]; then googleimagesdownload -s large -l 20 -kf ./var/oppressed.txt -o public/assets/images/oppressed; fi
+	if [ ! -d public/assets/images/oppressed ]; then googleimagesdownload -s large -l 20 -a wide -kf ./var/oppressed.txt -o public/assets/images/oppressed; fi
 
 retribution:
 	if [ ! -d public/assets/images/retribution ]; then googleimagesdownload -l 20 -t animated -kf ./var/retribution.txt -o public/assets/images/retribution; fi
