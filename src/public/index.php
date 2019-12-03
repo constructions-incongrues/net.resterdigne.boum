@@ -23,7 +23,7 @@ $insult = $insults[array_rand($insults)];
 
 <html>
     <head>
-        <title>Ma main invisible, tu la veux sur la gueule ? | v0.3.1</title>
+        <title>Ma main invisible, tu la veux sur la gueule ? | v0.4.0</title>
         <style>
 body {
     background-color: #000;
