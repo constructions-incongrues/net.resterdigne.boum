@@ -1,20 +1,36 @@
 version: '3'
 
 services:
-  nginx:
-    image: nginx:1.17.6
+  api:
+    build: ./src/api
+    command: ["php", "-S", "0.0.0.0:8080", "-t", "public/"]
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.nginx.rule=Host(`boum.localhost`)"
-      - "traefik.http.routers.nginx.entrypoints=web"
+      - "traefik.http.routers.api.rule=Host(`api.lagrandepurge.localhost`)"
+      - "traefik.http.routers.api.entrypoints=web"
+      - "traefik.http.services.api.loadbalancer.server.port=8080"
     volumes:
-      - ./src/public:/usr/share/nginx/html:ro
-      - ./etc/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./src/api/src:/usr/local/src
+      - ./var/images:/usr/local/src/public/images
 
-  php:
-    build: .
+  downloader:
+    build: ./src/downloader
     volumes:
-      - ./src:/usr/local/src
+      - ./etc/collections/dev:/etc/collections
+      - ./var/images:/data
+
+  front:
+    build: ./src/front
+    command: ["php", "-S", "0.0.0.0:8080", "-t", "public/"]
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.front.rule=Host(`lagrandepurge.localhost`)"
+      - "traefik.http.routers.front.entrypoints=web"
+      - "traefik.http.services.front.loadbalancer.server.port=8080"
+    volumes:
+      - ./src/front/src:/usr/local/src
+      - ./var:/usr/local/src/var
+      - ./var/images:/usr/local/src/public/images
 
   traefik:
     command:
@@ -25,7 +41,7 @@ services:
     image: traefik:2.0.4
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.traefik.rule=Host(`traefik.boum.localhost`)"
+      - "traefik.http.routers.traefik.rule=Host(`traefik.lagrandepurge.localhost`)"
       - "traefik.http.routers.traefik.entrypoints=web"
     ports:
       - "80:80"

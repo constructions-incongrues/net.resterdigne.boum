@@ -1,2 +1,6 @@
-/src/vendor
 /src/public/assets/images
+/src/api/src/var/
+/src/api/src/vendor
+/src/front/src/public/assets/images/
+/src/front/src/vendor
+/var/images

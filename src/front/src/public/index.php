@@ -7,17 +7,17 @@ use Symfony\Component\Finder\Finder;
 $finderActors = new Finder();
 $finderActors
     ->files()
-    // ->in(__DIR__.'/assets/images/oppressed')
-    ->in(__DIR__.'/assets/images/oppressors');
+    // ->in(__DIR__.'/images/oppressed')
+    ->in(__DIR__.'/images/oppressors');
 $partsImageActors = array_slice(explode('/', array_rand(iterator_to_array($finderActors))), -3, 3);
 
 // Retribution
 $finderRetributions = new Finder();
-$finderRetributions->files()->in(__DIR__.'/assets/images/retribution');
+$finderRetributions->files()->in(__DIR__.'/images/retribution');
 $partsImageRetributions = array_slice(explode('/', array_rand(iterator_to_array($finderRetributions))), -3, 3);
 
 // Insult
-$insults = file(__DIR__.'/../var/insults.txt');
+$insults = file(__DIR__.'/../var/db/insults.txt');
 $insult = $insults[array_rand($insults)];
 ?>
 
@@ -52,7 +52,7 @@ body {
 
     <body>
 
-        <img id="image" src="assets/images/<?php echo rawurldecode(implode('/', $partsImageActors)) ?>">
+        <img id="image" src="images/<?php echo rawurldecode(implode('/', $partsImageActors)) ?>">
 
         <p id="overlay">
 <?php echo $insult; ?>
@@ -74,7 +74,7 @@ body {
                         isPaused = true;
                         document.getElementById('overlay').style.display = 'block';
                         window.setTimeout(() => {
-                            e.target.src = 'assets/images/<?php echo rawurldecode(implode('/', array_slice(explode('/', array_rand(iterator_to_array($finderRetributions))), -3, 3))) ?>';
+                            e.target.src = 'images/<?php echo rawurldecode(implode('/', array_slice(explode('/', array_rand(iterator_to_array($finderRetributions))), -3, 3))) ?>';
                             window.setTimeout(() => {
                                 isPaused = false;
                             }, 2000);

@@ -1,0 +1,7 @@
+{
+    "name": "constructionsincongrues/lagrandepurge-front",
+    "type": "project",
+    "require": {
+        "symfony/finder": "^5.0"
+    }
+}
