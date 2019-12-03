@@ -1,20 +1,32 @@
 version: '3'
 
 services:
-  nginx:
-    image: nginx:1.17.6
+  # nginx:
+  #   image: nginx:1.17.6-alpine
+  #   labels:
+  #     - "traefik.enable=true"
+  #     - "traefik.http.routers.nginx.rule=Host(`boum.localhost`)"
+  #     - "traefik.http.routers.nginx.entrypoints=web"
+  #   volumes:
+  #     - ./src/public:/usr/share/nginx/html:ro
+
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.nginx.rule=Host(`boum.localhost`)"
-      - "traefik.http.routers.nginx.entrypoints=web"
+      - "traefik.http.routers.dev.rule=Host(`dev.boum.localhost`)"
+      - "traefik.http.routers.dev.entrypoints=web"
     volumes:
-      - ./src/public:/usr/share/nginx/html:ro
-      - ./etc/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./src:/home/node/src
 
-  php:
-    build: .
-    volumes:
-      - ./src:/usr/local/src
+  googleimagesdownload:
+    build:
+      context: .
+      dockerfile: googleimagedownloader.Dockerfile
+      volumes:
+        - ./src/app/static/assets/images:/var/local/images
 
   traefik:
     command:

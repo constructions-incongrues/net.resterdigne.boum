@@ -1,13 +1,15 @@
-FROM composer:1.9.1 as composer
-FROM php:7.2.24-fpm-alpine3.10
+FROM node:13.2.0-alpine
 
-COPY --from=composer /usr/bin/composer /usr/local/bin/composer
+WORKDIR /home/node/src
 
-RUN apk --update --no-cache add bash make py2-pip && \
-    pip install google_images_download==2.8.0
+EXPOSE 3000
 
-WORKDIR /usr/local/src
+RUN npm install --global generator-phaser-plus
 
-COPY ./src /usr/local/src
+COPY --chown=node:node ./src /home/node/src
 
-RUN composer install
+USER node
+
+ENTRYPOINT [ "yarn" ]
+
+CMD [ "start" ]
